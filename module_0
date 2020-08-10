@@ -4,9 +4,9 @@ number = np.random.randint(1,101)
 print ("Загадано число от 1 до 100")
 def game_core_v3(number):
     ''' Используется алгоритм бинарного поиска '''
-    count = 1
-    low_number = 0
-    high_number = 100
+    count=1
+    low_number=0
+    high_number=100
     while low_number<=high_number:
         count+=1
         divine=int((low_number+high_number) / 2)   #cреднее значение из общего количества цифр  
@@ -19,12 +19,12 @@ def game_core_v3(number):
     return count 
 
 def score_game(game_core_v3):
-    count_ls = []
+    count_ls=[]
     np.random.seed(1)  
-    random_array = np.random.randint(1,101, size=(1000))
+    random_array=np.random.randint(1,101, size=(1000))
     for number in random_array:
         count_ls.append(game_core_v3(number))
-    score = int(np.mean(count_ls))
+    score=int(np.mean(count_ls))
     print(f"Ваш алгоритм угадывает число в среднем за {score} попыток")
     return(score)
 
